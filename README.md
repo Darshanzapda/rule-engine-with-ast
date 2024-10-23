@@ -82,29 +82,43 @@ In the "Evaluate" tab, you can evaluate rules using the following format:
 
 > **Note:** If you are using the Running Locally Without Docker to run the project, you do not need the `docker-compose.yml` file. Feel free to remove it from the directory.
 
+
+- Database Setup:
+
+  - Ensure you have imported both database files into MongoDB using MongoDB Compass.
+  - Make sure your MongoDB server is running locally.
+
+- Clone repository
 ```
 git clone https://github.com/Darshanzapda/rule-engine-with-ast
 ```
-```
-cd rule-engine-with-ast
-```
-Start MongoDB (make sure MongoDB is running):
+- Before running install necessary dependencies
 
+  - install dependencies by running the following command in the client directory:
 
-Run the Backend: Navigate to the server directory and run:
-```
-cd server
-```
-> **Note:** Make sure you have express install if not use below command:
+  ```
+  npm install
+  ```
+- install dependencies by running the following command in the server directory:
+
+  ```
+  npm install express
+  npm install cors
+  npm install mongoose
+  npm install bcryptjs
+  npm install jsonwebtoken
+
+   ```
+> **Note:** change mongodb location in server.js file
 
 ```
-npm install express
+mongoose.connect('mongodb://mongodb:27017/rule_system') To mongoose.connect('mongodb://localhost:27017/rule_system') Save file
 ```
-> **Note:** After express install run below command tu run application
-
+- now run command in server directory
 ```
 node server.js
 ```
+
 Run the Frontend: Navigate to the client directory and run:
 
 ```
@@ -129,6 +143,15 @@ Make sure to have Docker installed on your system.
 
 - Build the Docker images: Ensure you have your Dockerfile and docker-compose.yml properly configured.
 
+- Ensure Docker Desktop is running.
+
+- Make sure the folder name is 'Rule-Engine-AST'.
+
+- In the server.js file, ensure the MongoDB connection is set to:
+
+```
+mongoose.connect('mongodb://mongodb:27017/rule_system')
+```
 - Run the application: From your project directory, execute:
 
 ```
@@ -139,8 +162,8 @@ docker-compose up --build
 ```
 docker-compose down
 ```
+> **Note:** First, try logging in using the credentials mentioned in the Login section. If you encounter an "Invalid credentials" error, follow the steps below to manually create a new user.
 
-- Create a User: Since there is no registration facility in this application, you must manually create a user to log in. To do this:
 
 - Open another terminal and run the following command to access the MongoDB shell:
 
@@ -164,13 +187,17 @@ db.users.insertOne({
 
 ### Login:
 
-- Now, go to your browser and navigate to http://localhost:3000/login. Enter the email demo@gmail.com and the password demo123.
+- Now, go to your browser and navigate to http://localhost:3000/login. Enter the email ```demo@gmail.com``` and the password ```demo123.```
 > **Note:**  If you encounter an error during login, it may be due to invalid credentials. If there’s no error after entering valid credentials but you’re not redirected to the dashboard, refresh the page and try again.
 If there’s no data in the "Combine" and "Create" tables, follow these steps to add the rules.
 
-- First, go to the "Create Rule" section and enter this rule: (department = 'Sales').
-After the success message, add another rule: (salary > 20000 OR experience > 5).
-Then, go to the "Combine Rule" section, select both rules, and click the "Combine Rule" button. It will show the combined rule in the "Combined Rules" table.
+### Testing and Validation:
+
+- First, go to the "Create Rule" section and enter this rule: ```(department = 'Sales')```
+
+- After the success message, add another rule: ```(salary > 20000 OR experience > 5)```
+
+- Then, go to the "Combine Rule" section, select both rules, and click the "Combine Rule" button. It will show the combined rule in the "Combined Rules" table.
 
 - To evaluate, go to the "Evaluate" tab and enter 
 ```{"department":"Sales", "salary":"21000"} ```
