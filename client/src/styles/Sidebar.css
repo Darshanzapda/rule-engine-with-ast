@@ -1,0 +1,201 @@
+/* Sidebar.css */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.sidebar-header {
+  background-color: #343a40;
+}
+
+.sidebar-title {
+  margin: 0; /* Remove default margin */
+  text-align: left; /* Align text to the left */
+  padding: 15px; /* Padding around header */
+}
+
+.sidebar-item {
+  padding: 10px 0; /* Consistent vertical padding for items */
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  color: #ffffff; /* Default text color */
+  text-decoration: none;
+  padding: 10px 15px; /* Adjusted padding for a more compact layout */
+  border-radius: 4px; /* Rounded corners for hover effect */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background color transition */
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+  color: #ffffff; /* Default icon color */
+  transition: color 0.3s ease; /* Smooth icon color transition */
+}
+
+.sidebar-link:hover {
+  background-color: #007bff; /* Change this to your preferred hover color */
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+.sidebar-link:hover .sidebar-icon {
+  color: #ffffff; /* Change icon color to white on hover */
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* Full width for table container */
+.table-container {
+  width: 100%; /* Full width */
+  max-height: 300px; /* Fixed height */
+  overflow-y: auto; /* Vertical scroll */
+  border: 1px solid #dee2e6; /* Border for visual separation */
+  margin-bottom: 20px; /* Space below the table container */
+}
+.table tbody tr {
+  height: 40px; /* Fixed height for table rows */
+}
+
+.table tbody tr.empty-row {
+  height: 40px; /* Ensure empty rows maintain the same height */
+  background-color: #f9f9f9; /* Optional: color for empty rows */
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center; /* Center the pagination */
+  margin-top: 1rem; /* Space above the pagination */
+}
+
+.page-button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.2rem; /* Space between buttons */
+  border: 1px solid #007bff; /* Border color */
+  background-color: #fff; /* Background color */
+  color: #007bff; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Transition effect */
+}
+
+.page-button:hover {
+  background-color: #007bff; /* Change background on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+.page-button.active {
+  background-color: #007bff; /* Set active button color to blue */
+  color: #fff; /* Active text color */
+  border: 1px solid #0056b3; /* Active border color */
+}
+
+.page-button:disabled {
+  background-color: #ccc; /* Disabled button color */
+  cursor: not-allowed; /* Not allowed cursor */
+}
+
+/* Space between elements */
+h4 {
+  margin-top: 20px; /* Space above the heading */
+}
+
+/* Additional styling for the Combine Selected Rules button */
+.combine-btn-container {
+  display: flex;
+  justify-content: center; /* Center the button */
+  margin: 20px 0; /* Space above and below the button */
+}
+
+/* Line Divider */
+.divider {
+  height: 1px;
+  background-color: #444; /* Darker color for divider */
+  margin: 10px 0; /* Space around the divider */
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40;
+  padding: 10px 10px; /* Consistent padding for footer */
+}
+
+.logout {
+  margin-top: auto; /* Push logout button to the bottom */
+  transition: 0.3s ease; /* Smooth transition for hover effect */
+  background-color: #dc3545; /* Change logout button hover color to red */
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 0px solid black;
+}
+
+.logout:hover {
+  background-color: #b62332; /* Change logout button hover color to red */
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+.sidebar-item.active .sidebar-link {
+  background-color: #007bff; /* Change the background color for active item */
+  color: white; /* Text color for visibility */
+}
+
+.dashboard {
+  display: flex; /* Use flexbox for layout */
+}
+
+.dashboard-content {
+  margin-left: 250px; /* Same width as the sidebar */
+  padding: 20px; /* Add some padding */
+  flex-grow: 1; /* Allow it to take up the remaining space */
+}
+
+/* Adjust table styles */
+table {
+  width: 100%; /* Ensure the table takes full width of the container */
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Updated table container styles */
+.pagination-container {
+  text-align: center;
+  margin-bottom: 1rem; /* Space below the pagination */
+}
+
+/* Fixed height for both rule sections to ensure alignment */
+.select-rules-container, 
+.combined-rules-container {
+  max-height: 300px; /* Fixed height for both sections */
+  overflow-y: auto; /* Allow scrolling if content exceeds */
+}

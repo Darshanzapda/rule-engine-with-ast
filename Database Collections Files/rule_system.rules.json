@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "67173cf9ebaba30de8e880b6"
+  },
+  "ruleString": "(department = 'Sales')",
+  "ast": {
+    "type": "condition",
+    "value": "department = 'Sales'"
+  },
+  "isCombined": false,
+  "ruleNumber": 1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67173d0debaba30de8e880c0"
+  },
+  "ruleString": "(salary > 20000 OR experience > 5)",
+  "ast": {
+    "type": "operator",
+    "value": "OR",
+    "left": {
+      "type": "condition",
+      "value": "salary > 20000"
+    },
+    "right": {
+      "type": "condition",
+      "value": "experience > 5"
+    }
+  },
+  "isCombined": false,
+  "ruleNumber": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67173d16ebaba30de8e880cb"
+  },
+  "ruleString": "(department = 'Sales') AND (salary > 20000 OR experience > 5)",
+  "ast": {
+    "type": "operator",
+    "value": "AND",
+    "left": {
+      "type": "condition",
+      "value": "department = 'Sales'"
+    },
+    "right": {
+      "type": "operator",
+      "value": "OR",
+      "left": {
+        "type": "condition",
+        "value": "salary > 20000"
+      },
+      "right": {
+        "type": "condition",
+        "value": "experience > 5"
+      }
+    }
+  },
+  "isCombined": true,
+  "ruleNumber": 3,
+  "__v": 0
+}]
